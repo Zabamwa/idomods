@@ -343,6 +343,10 @@ nav {
 }
 
 .flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-wrap-bottle-section {
   flex-wrap: nowrap;
 }
 
@@ -594,7 +598,7 @@ nav {
     display: flex;
   }
 
-  .flex-wrap {
+  .flex-wrap-bottle-section {
     flex-wrap: wrap;
   }
 
