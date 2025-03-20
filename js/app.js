@@ -103,12 +103,12 @@ closeModal.addEventListener('click', () => {
 })
 
 // LOAD MORE
-document.addEventListener('scroll', async (e) => {
-  const scrollHeight = document.documentElement.scrollHeight;
-  const scrollTop = document.documentElement.scrollTop;
-  const clientHeight = document.documentElement.clientHeight;
+document.addEventListener('scroll', async () => {
+  const scrollHeight = window.innerHeight;
+  const pageY = window.scrollY
+  const bodyOffsetHeight = document.body.offsetHeight;
 
-  if( (scrollTop + clientHeight) > (scrollHeight - 5)){
+  if(scrollHeight + pageY >= bodyOffsetHeight){
     apiUrl = `https://brandstestowy.smallhost.pl/api/random?pageNumber=${pageNumber}&pageSize=${displayCount}`;
    await fetchData(apiUrl);
   }
@@ -149,5 +149,29 @@ mobileMenuTabs.forEach(tab => {
     body.style.overflow = 'auto'
   })
 });
+
+// SET ACTIVE TAB DURING SCROLLING
+const updateActiveTab = () => {
+  const sections = document.querySelectorAll("section");
+  const tabs = document.querySelectorAll("nav ul li a");
+  let currentSection = null;
+
+  sections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+      currentSection = section;
+    }
+  });
+
+  if (currentSection) {
+    tabs.forEach((tab) => tab.classList.remove("active"));
+    const activeTab = document.querySelector(`nav ul li a[href="#${currentSection.id}"]`);
+    if (activeTab) {
+      activeTab.classList.add("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", updateActiveTab);
 
 

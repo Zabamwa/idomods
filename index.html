@@ -1,329 +1,390 @@
 <!doctype html>
 <html lang="PL-pl">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Arthrohard</title>
-    <link rel="stylesheet" href="css/style.css">
-    <meta name="description" content="Arthrohard">
-  </head>
-  <body>
-    <dialog class="modal-menu" id="menu">
-      <div class="container-menu">
-        <ul>
-          <li class="mobile-menu-tab">
-            <a href="#preparation">Co nas wyróżnia</a>
-          </li>
-          <li class="mobile-menu-tab">
-            <a href="#composition">Skład</a>
-          </li>
-          <li class="mobile-menu-tab">
-            <a href="#product_list">Produkty</a>
-          </li>
-        </ul>
-      </div>
-    </dialog>
-    <dialog class="modal" id="modal">
-      <div class="container-modal">
-        <div class="container jc-space-between">
-          <p id="product_id">1</p>
-          <p id="close_modal">X</p>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arthrohard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Arthrohard">
+</head>
+<body>
+<dialog class="modal-menu" id="menu">
+  <div class="container-menu">
+    <ul>
+      <li class="mobile-menu-tab">
+        <a href="#preparation">Co nas wyróżnia</a>
+      </li>
+      <li class="mobile-menu-tab">
+        <a href="#composition">Skład</a>
+      </li>
+      <li class="mobile-menu-tab">
+        <a href="#product">Produkty</a>
+      </li>
+    </ul>
+  </div>
+</dialog>
+<dialog class="modal" id="modal">
+  <div class="container-modal">
+    <div class="container jc-space-between">
+      <p id="product_id">1</p>
+      <p id="close_modal">X</p>
+    </div>
+    <p id="product_name">Nazwa:</p>
+    <p id="product_value">Wartość:</p>
+  </div>
+</dialog>
+<nav>
+  <div class="logo-section">
+    <a href="#">
+      <figure class="no-margin">
+        <img src="./img/logo.svg" alt="logo"/>
+      </figure>
+    </a>
+  </div>
+  <div class="only-mobile">
+    <figure class="no-margin">
+      <img class="mobile-menu" src="./img/hamburger.svg" alt="hamburger"/>
+    </figure>
+  </div>
+  <ul class="menu-section">
+    <li class="menu-tab">
+      <a href="#preparation">Co nas wyróżnia</a>
+    </li>
+    <li class="menu-tab">
+      <a href="#composition">Skład</a>
+    </li>
+    <li class="menu-tab" style="font-weight: 700">
+      <a href="#product">Produkty</a>
+    </li>
+  </ul>
+</nav>
+<main>
+  <div class="section-background">
+    <div class="position-relative">
+      <div class="first-section-padding margin-section">
+        <div class="container gap-100 container-center flex-wrap hero-container">
+          <div class="container">
+            <figure class="no-margin">
+              <img class="bottle-img" src="./img/group-18.svg" alt="image"/>
+            </figure>
+          </div>
+          <div class="container section-detail">
+            <div>
+              <figure class="no-margin">
+                <img class="big-logo" src="./img/logo.svg" alt="logo"/>
+              </figure>
+              <div class="container-details">
+                <h2 class="promo-section-title">
+                  Lab-V Arthrohard Preparat<br/> na wsparcie stawów dla psa i kota
+                </h2>
+                <p class="promo-section-paragraph">Arthrohard to dobrze przyswajalny suplement diety w formie syropu,
+                  stworzony z myślą o zdrowiu stawów Twojego psa lub kota</p>
+              </div>
+              <button class="buy-btn">Kup teraz</button>
+            </div>
+          </div>
         </div>
-        <p id="product_name">Nazwa:</p>
-        <p id="product_value">Wartość:</p>
       </div>
-    </dialog>
-    <nav>
-      <div class="logo-section">
-        <a href="#">
-          <figure class="no-margin">
-            <img src="./img/logo.svg" alt="logo"/>
-          </figure>
-        </a>
+      <figure class="small-vector-right">
+        <img src="./img/small-vector-right.svg" alt="vector"/>
+      </figure>
+      <figure class="no-margin">
+        <img class="big-vector-right" src="./img/big-vector-right.svg" alt="vector"/>
+      </figure>
+      <figure class="no-margin">
+        <img class="big-vector-left" src="./img/big-vector-left.svg" alt="vector"/>
+      </figure>
+    </div>
+  </div>
+  <section id="preparation" class="section-background">
+    <div class="preparation-section-padding margin-section">
+      <div class="container container-column-center container-column">
+        <h3 class="preparation-title">Co wyróżnia nasz preparat</h3>
+        <div class="border-line"></div>
       </div>
-      <div class="only-mobile">
-        <figure>
-          <img class="mobile-menu" src="./img/hamburger.svg" alt="hamburger" />
+      <div class="container-preparation-details container-center flex-wrap">
+        <div class="container container-column width-420 alignItems-center">
+          <h3 class="preparation-subtitle no-margin">Innowacyjny dodatek -<br/> Czarciego Pazura</h3>
+          <div class="border-line"></div>
+          <p class="preparation-paragraph no-margin">
+            Zapewnia dodatkowe wsparcie w zwalczaniu<br/> stanów bolowych i zapalnych. Skoncentrowane<br/> składniki
+            aktywne,
+            opracowane we współpracy<br/> z lekarzami weterynarii, przynosza szybkie<br/> i zauważalne efekty,
+            szczególnie
+            korzystne dla<br/> zwierząt z poważnymi problemami stawowymi.
+          </p>
+          <div class="position-relative border">
+            <picture class="position-absolute flower-vector-left no-margin">
+              <source srcset="./img/big-vector-left.svg" media="(max-width: 992px)">
+              <source srcset="./img/flower-vector-left.svg">
+              <img class="vector-img" src="./img/flower-vector-left.svg" alt="flower-vector-left"/>
+            </picture>
+            <picture class="position-absolute flower-vector-right no-margin">
+              <source srcset="./img/big-vector-right.svg" media="(max-width: 992px)">
+              <source srcset="./img/flower-vector-right.svg">
+              <img class="vector-img" src="./img/flower-vector-right.svg" alt="flower-vector-right"/>
+            </picture>
+            <figure class="width-360 no-margin">
+              <img class="preparation-img" src="./img/flower.webp" alt="img"/>
+            </figure>
+          </div>
+        </div>
+        <div class="container container-column width-420 alignItems-center">
+          <h3 class="preparation-subtitle no-margin">Wygoda - <br/>dwa sposoby podawania</h3>
+          <div class="border-line"></div>
+          <div class="circle-container">
+            <div class="container alignItems-center gap-10">
+              <div class="circle">1</div>
+              <p class="preparation-paragraph no-margin circle-paragraph">Bezpośrednio do pyszczka</p>
+            </div>
+            <div class="container alignItems-center gap-10">
+              <div class="circle">2</div>
+              <p class="preparation-paragraph no-margin circle-paragraph">Zmieszany z karmą</p>
+            </div>
+          </div>
+          <div class="position-relative border" style="margin-top: 36px">
+            <picture class="position-absolute pets-vector-left no-margin">
+              <source srcset="./img/big-vector-left.svg" media="(max-width: 992px)">
+              <source srcset="./img/pets-vector-left.svg">
+              <img class="vector-img" src="./img/pets-vector-left.svg" alt="pets-vector-left"/>
+            </picture>
+            <picture class="position-absolute pets-vector-right no-margin">
+              <source srcset="./img/big-vector-right.svg" media="(max-width: 992px)">
+              <source srcset="./img/pets-vector-right.svg">
+              <img class="vector-img" src="./img/pets-vector-right.svg" alt="pets-vector-right"/>
+            </picture>
+            <figure class="width-360 no-margin">
+              <img class="preparation-img" src="./img/pets.webp" alt="img"/>
+            </figure>
+          </div>
+        </div>
+        <div class="container container-column width-420 alignItems-center">
+          <h3 class="preparation-subtitle no-margin">Skuteczność -<br/> skoncentrowana dawka</h3>
+          <div class="border-line"></div>
+          <p class="preparation-paragraph">
+            <strong class="fontSize-20 fontWeight-normal">Tylko jedna porcja dziennie.</strong>
+            <br/>
+            To nie tylko wygoda, ale również gwarancja,<br/> że Twoje zwierzę otrzymuje wszystko, czego<br/> potrzebuje,
+            aby
+            cieszyć się zdrowiem i aktywnością<br/> na długo. Skorzystaj z Arthrohard i zobacz<br/> różnicę w komforcie
+            życia
+            swojego zwierzęcia.
+          </p>
+          <div class="position-relative border">
+            <picture class="position-absolute syringe-vector-left no-margin">
+              <source srcset="./img/big-vector-left.svg" media="(max-width: 992px)">
+              <source srcset="./img/syringe-vector-left.svg">
+              <img class="vector-img" src="./img/syringe-vector-left.svg" alt="syringe-vector-left"/>
+            </picture>
+            <picture class="position-absolute syringe-vector-right no-margin">
+              <source srcset="./img/big-vector-right.svg" media="(max-width: 992px)">
+              <source srcset="./img/syringe-vector-right.svg">
+              <img class="vector-img" src="./img/syringe-vector-right.svg" alt="syringe-vector-right"/>
+            </picture>
+            <figure class="width-360 no-margin">
+              <img class="preparation-img" src="./img/syringe.webp" alt="img"/>
+            </figure>
+          </div>
+        </div>
+        <div class="container container-column container-column-center only-mobile">
+          <h3 class="preparation-subtitle no-margin">Działanie preparatu</h3>
+          <div class="border-line"></div>
+          <div class="container container-column action-preparation">
+            <div class="container alignItems-center gap-10">
+              <div class="circle">1</div>
+              <p class="preparation-paragraph no-margin circle-paragraph">Wsparcie rozwoju chrząstki stawowej</p>
+            </div>
+            <div class="container alignItems-center gap-10">
+              <div class="circle">2</div>
+              <p class="preparation-paragraph no-margin circle-paragraph">Działanie chondroprotekcyjne</p>
+            </div>
+            <div class="container alignItems-center gap-10">
+              <div class="circle">3</div>
+              <p class="preparation-paragraph no-margin circle-paragraph">Zmniejszenie stanu zapalnego i bólu</p>
+            </div>
+            <div class="container alignItems-center gap-10">
+              <div class="circle">4</div>
+              <p class="preparation-paragraph no-margin circle-paragraph">Wzmocnienie stawów</p>
+            </div>
+            <div class="container alignItems-center gap-10">
+              <div class="circle">5</div>
+              <p class="preparation-paragraph no-margin circle-paragraph">Ochrona przed mikrourazami</p>
+            </div>
+            <div class="container alignItems-center gap-10">
+              <div class="circle">6</div>
+              <p class="preparation-paragraph no-margin circle-paragraph">Regeneracja po urazach i zabiegach
+                ortopedycznych</p>
+            </div>
+            <div class="container alignItems-center gap-10">
+              <div class="circle">7</div>
+              <p class="preparation-paragraph no-margin circle-paragraph">Poprawa jakości życia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id='composition'>
+    <div class="container container-column-center container-column margin-section">
+      <div class="position-relative">
+        <h3 class="composition-title">Skład w 5 ml</h3>
+        <figure class="position-absolute composition-vector-left no-margin">
+          <img class="composition-vector-img" src="./img/big-vector-left.svg" alt="syringe-vector-left"/>
+        </figure>
+        <figure class="position-absolute composition-vector-right no-margin">
+          <img class="composition-vector-img" src="./img/big-vector-right.svg" alt="syringe-vector-right"/>
         </figure>
       </div>
-      <ul class="menu-section">
-        <li class="menu-tab">
-          <a href="#preparation">Co nas wyróżnia</a>
-        </li>
-        <li class="menu-tab">
-          <a href="#composition">Skład</a>
-        </li>
-        <li class="menu-tab" style="font-weight: 700">
-          <a href="#product_list">Produkty</a>
-        </li>
-      </ul>
-    </nav>
-    <main>
-      <section class="section-background">
-        <div class="position-relative" ">
-          <div class="first-section-padding margin-section">
-            <div class="container gap-100 container-center flex-wrap">
-              <div class="container">
-                <figure class="no-margin">
-                  <img class="bottle-img" src="./img/group-18.svg"  alt="image"/>
-                </figure>
-              </div>
-              <div class="container section-detail">
-                <div>
-                  <figure class="no-margin">
-                    <img class="big-logo" src="./img/logo.svg" alt="logo"/>
-                  </figure>
-                  <div class="container-details">
-                    <h2 class="promo-section-title">
-                      Lab-V Arthrohard Preparat<br/> na wsparcie stawów dla psa i kota
-                    </h2>
-                    <p class="promo-section-paragraph">Arthrohard to dobrze przyswajalny suplement diety w formie syropu, stworzony z myślą o zdrowiu stawów Twojego psa lub kota</p>
-                  </div>
-                  <button class="buy-btn">Kup teraz</button>
-                </div>
-              </div>
-            </div>
+      <div class="border-line"></div>
+      <h3 class="composition-subtitle">Co dają poszczególne składniki:</h3>
+      <div class="container margin-composition flex-wrap-bottle-section">
+        <div class="container container-column alignItems-center composition jc-space-between">
+          <div class="container container-column alignItems-center">
+            <div class="composition-circle"></div>
+            <figure class="composition-rwd">
+              <img src="./img/composition_1.svg" alt="composition_1"/>
+            </figure>
+            <h3 class="fontSize-31 composition-paragraph-title border">Siarczan glukozaminy <br/><span>650 mg</span>
+            </h3>
+            <p class="fontSize-20 text-center composition-paragraph">Glukozamina jest naturalnym składnikiem chrząstki.
+              Dodatek glukozaminy przyczynia się do zwiększenia
+              produkcji glikozaminoglikanów (m.in. siarczanu keratanu, heparanu, kwasu hialuronowego), które pomagają w
+              odbudowie chrząstki, co jest szczególnie korzystne dla zwierząt ze zmianami zwyrodnieniowymi stawów.
+            </p>
           </div>
-          <figure class="small-vector-right">
-            <img src="./img/small-vector-right.svg" alt="vector" />
-          </figure>
-          <figure class="no-margin">
-            <img class="big-vector-right" src="./img/big-vector-right.svg" alt="vector" />
-          </figure>
-          <figure class="no-margin">
-            <img class="big-vector-left" src="./img/big-vector-left.svg" alt="vector" />
-          </figure>
-        </div>
-      </section>
-      <section class="section-background">
-        <div class="preparation-section-padding margin-section">
-          <div class="container container-column-center container-column">
-            <h3 id='preparation' class="preparation-title">Co wyróżnia nasz preparat</h3>
-            <div class="border-line"></div>
-          </div>
-          <div class="container-preparation-details container-center flex-wrap">
-            <div class="container container-column width-420 alignItems-center">
-              <h3 class="preparation-subtitle no-margin">Innowacyjny dodatek -<br /> Czarciego Pazura</h3>
-              <div class="border-line"></div>
-              <p class="preparation-paragraph">
-                Zapewnia dodatkowe wsparcie w zwalczaniu<br/> stanów bolowych i zapalnych. Skoncentrowane<br/> składniki aktywne,
-                opracowane we współpracy<br/> z lekarzami weterynarii, przynosza szybkie<br/> i zauważalne efekty, szczególnie
-                korzystne dla<br/> zwierząt z poważnymi problemami stawowymi.
-              </p>
-              <div class="position-relative">
-                <figure class="position-absolute" style="left: -115px; bottom: 0;">
-                  <img src="./img/flower-vector-left.svg" alt="flower-vector-left"/>
-                </figure>
-                <figure>
-                  <img class="flower-vector-right" src="./img/flower-vector-right.svg" alt="flower-vector-right"/>
-                </figure>
-                <figure class="width-360 no-margin">
-                  <img class="preparation-img" src="./img/flower.webp" alt="img"/>
-                </figure>
-              </div>
-            </div>
-            <div class="container container-column width-420 alignItems-center">
-              <h3 class="preparation-subtitle no-margin">Wygoda - <br/>dwa sposoby podawania</h3>
-              <div class="border-line"></div>
-              <div class="circle-container">
-                <div class="container alignItems-center gap-10">
-                  <div class="circle">1</div>
-                  <p class="preparation-paragraph no-margin circle-paragraph">Bezpośrednio do pyszczka</p>
-                </div>
-                <div class="container alignItems-center gap-10">
-                  <div class="circle">2</div>
-                  <p class="preparation-paragraph no-margin circle-paragraph">Zmieszany z karmą</p>
-                </div>
-              </div>
-              <div class="position-relative" style="margin-top: 36px">
-                <figure class="position-absolute" style="left: -105px; bottom: -10px;">
-                  <img src="./img/pets-vector-left.svg" alt="pets-vector-left"/>
-                </figure>
-                <figure class="position-absolute" style="right: -60px ; top: 120px">
-                  <img src="./img/pets-vector-right.svg" alt="pets-vector-right"/>
-                </figure>
-                <figure class="width-360 no-margin">
-                  <img class="preparation-img" src="./img/pets.webp" alt="img"/>
-                </figure>
-              </div>
-            </div>
-            <div class="container container-column width-420 alignItems-center">
-              <h3 class="preparation-subtitle no-margin">Skuteczność -<br/> skoncentrowana dawka</h3>
-              <div class="border-line"></div>
-              <p class="preparation-paragraph">
-                <strong class="fontSize-20 fontWeight-normal">Tylko jedna porcja dziennie.</strong>
-              <br/>
-                To nie tylko wygoda, ale również gwarancja,<br/> że Twoje zwierzę otrzymuje wszystko, czego<br/> potrzebuje, aby
-                cieszyć się zdrowiem i aktywnością<br/> na długo. Skorzystaj z Arthrohard i zobacz<br/> różnicę w komforcie życia
-                swojego zwierzęcia.
-              </p>
-              <div class="position-relative">
-                <figure class="position-absolute" style="left: -120px; bottom: 35px;">
-                  <img src="./img/syringe-vector-left.svg" alt="syringe-vector-left"/>
-                </figure>
-                <figure class="position-absolute" style="right: -65px ; top: 115px">
-                  <img src="./img/syringe-vector-right.svg" alt="syringe-vector-right"/>
-                </figure>
-                <figure class="width-360 no-margin">
-                  <img  class="preparation-img" src="./img/syringe.webp" alt="img"/>
-                </figure>
-              </div>
-            </div>
-            <div class="container container-column container-column-center only-mobile">
-              <h3 class="preparation-subtitle no-margin">Działanie preparatu</h3>
-              <div class="border-line"></div>
-              <div class="container container-column action-preparation">
-                <div class="container alignItems-center gap-10">
-                  <div class="circle">1</div>
-                  <p class="preparation-paragraph no-margin circle-paragraph">Wsparcie rozwoju chrząstki stawowej</p>
-                </div>
-                <div class="container alignItems-center gap-10">
-                  <div class="circle">2</div>
-                  <p class="preparation-paragraph no-margin circle-paragraph">Działanie chondroprotekcyjne</p>
-                </div>
-                <div class="container alignItems-center gap-10">
-                  <div class="circle">3</div>
-                  <p class="preparation-paragraph no-margin circle-paragraph">Zmniejszenie stanu zapalnego i bólu</p>
-                </div>
-                <div class="container alignItems-center gap-10">
-                  <div class="circle">4</div>
-                  <p class="preparation-paragraph no-margin circle-paragraph">Wzmocnienie stawów</p>
-                </div>
-                <div class="container alignItems-center gap-10">
-                  <div class="circle">5</div>
-                  <p class="preparation-paragraph no-margin circle-paragraph">Ochrona przed mikrourazami</p>
-                </div>
-                <div class="container alignItems-center gap-10">
-                  <div class="circle">6</div>
-                  <p class="preparation-paragraph no-margin circle-paragraph">Regeneracja po urazach i zabiegach ortopedycznych</p>
-                </div>
-                <div class="container alignItems-center gap-10">
-                  <div class="circle">7</div>
-                  <p class="preparation-paragraph no-margin circle-paragraph">Poprawa jakości życia</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="container container-column-center container-column margin-section">
-          <h3 id='composition' class="composition-title">Skład w 5 ml</h3>
-          <div class="border-line"></div>
-          <h3 class="composition-subtitle">Co dają poszczególne składniki:</h3>
-          <div class="container margin-composition flex-wrap-bottle-section">
-            <div class="container container-column alignItems-center composition jc-space-between">
-              <div class="container container-column alignItems-center">
-                <div class="composition-circle"></div>
-                <figure class="composition-rwd">
-                  <img src="./img/composition_1.svg" alt="composition_1" />
-                </figure>
-                <h3 class="fontSize-31 composition-paragraph-title">Siarczan glukozaminy <br/><span>650 mg</span></h3>
-                <p class="fontSize-20 text-center composition-paragraph">Glukozamina jest naturalnym składnikiem chrząstki. Dodatek glukozaminy przyczynia się do zwiększenia
-                  produkcji glikozaminoglikanów (m.in. siarczanu keratanu, heparanu, kwasu hialuronowego), które pomagają w
-                  odbudowie chrząstki, co jest szczególnie korzystne dla zwierząt ze zmianami zwyrodnieniowymi stawów.
-                </p>
-              </div>
-              <div class="container container-column alignItems-center">
-                <div class="composition-circle"></div>
-                <figure class="composition-rwd">
-                  <img src="./img/composition_2.svg" alt="composition_2" />
-                </figure>
-                <h3 class="fontSize-31 composition-paragraph-title">Siarczan chondroityny <br/><span>300 mg</span></h3>
-                <p class="fontSize-20 text-center composition-paragraph">Chondroityna, podobnie jak glukozamina, jest składnikiem chrząstki. Chondroityna
-                  pomaga zwalczać enzymy, które niszczą chrząstkę, a także pomaga chrząstce zatrzymać wodę, co jest ważne
-                  dla jej sprężystości i absorpcji wstrząsów.
-                </p>
-              </div>
-              <div class="container container-column alignItems-center">
-                <div class="composition-circle"></div>
-                <figure class="composition-rwd">
-                  <img src="./img/composition_1.svg" alt="composition_3" />
-                </figure>
-                <h3 class="fontSize-31 composition-paragraph-title">Kwas hialuronowy <br/><span>50 mg</span></h3>
-                <p class="fontSize-20 text-center composition-paragraph">Kwas hialuronowy jest kluczowym składnikiem płynu stawowego, który działa jak smar
-                  i amortyzator dla stawów. Suplementacja kwasem hialuronowym może pomóc w utrzymaniu prawidłowej
-                  objętości i konsystencji płynu stawowego.
-                </p>
-              </div>
-            </div>
-            <div class="container container-column alignItems-center bottle-order">
-              <div class="container container-column alignItems-center position-relative">
-                <figure class="no-margin" ">
-                  <img class="bottle-img" src="./img/bottle.webp" alt="bottle" />
-                </figure>
-                <button class="composition-button position-absolute">Kup teraz</button>
-              </div>
-            </div>
-            <div class="container container-column alignItems-center composition jc-space-between">
-              <div class="container container-column alignItems-center">
-                <div class="composition-circle"></div>
-                <figure class="composition-rwd">
-                  <img src="./img/composition_4.svg" alt="composition_4" />
-                </figure>
-                <h3 class="fontSize-31 composition-paragraph-title">Czarci Pazur <br/><span>250 mg</span></h3>
-                <p class="fontSize-20 text-center composition-paragraph">Glukozamina jest naturalnym składnikiem chrząstki. Dodatek glukozaminy przyczynia się do zwiększenia
-                  produkcji glikozaminoglikanów (m.in. siarczanu keratanu, heparanu, kwasu hialuronowego), które pomagają w
-                  odbudowie chrząstki, co jest szczególnie korzystne dla zwierząt ze zmianami zwyrodnieniowymi stawów.
-                </p>
-              </div>
-              <div class="container container-column alignItems-center">
-                <div class="composition-circle"></div>
-                <figure class="composition-rwd">
-                  <img src="./img/composition_5.svg" alt="composition_5" />
-                </figure>
-                <h3 class="fontSize-31 composition-paragraph-title">Witamina C <br/><span>50 mg</span></h3>
-                <p class="fontSize-20 text-center composition-paragraph">Witamina C jest potężnym przeciwutleniaczem, który może pomóc w ochronie stawów
-                  poprzez neutralizację wolnych rodników, które mogą uszkadzać chrząstkę. Ponadto, witamina C odgrywa
-                  ważną rolę w produkcji kolagenu, kluczowego składnika chrząstki.
-                </p>
-              </div>
-              <div class="container container-column alignItems-center">
-                <div class="composition-circle"></div>
-                <figure class="composition-rwd">
-                  <img src="./img/composition_6.svg" alt="composition_6" />
-                </figure>
-                <h3 class="fontSize-31 composition-paragraph-title">MSM <br/><span>250 mg</span></h3>
-                <p class="fontSize-20 text-center composition-paragraph">Metylosulfonylometan, czyli MSM, to naturalny związek siarki, który pomaga w
-                  utrzymaniu zdrowych stawów poprzez zmniejszenie stanu zapalnego i bólu. MSM może również pomagać w
-                  produkcji kolagenu, co przyczynia się do zdrowia chrząstki stawowej.
-                </p>
-              </div>
-              <div class="container container-column alignItems-center composition-rwd">
-                <div class="composition-circle"></div>
-                <figure>
-                  <img src="./img/composition_7.svg" alt="composition_7" />
-                </figure>
-                <h3 class="fontSize-31 composition-paragraph-title">Syrop glukozowo - fruktozowy <br/><span>250 mg</span></h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="parallax"></div>
-      </section>
-      <section>
-        <div class="container container-center container-column" >
-          <div class="container container-center select-section">
-            <label class="fontSize-20 fontWeight-normal selectLabel" for="count">Liczba produktów na stronie</label>
-            <div class="select-container">
-              <select name="count" id="count" class="select fontSize-20 fontWeight-normal">
-                <option selected>10</option>
-                <option>20</option>
-                <option>30</option>
-                <option>40</option>
-                <option>50</option>
-              </select>
-              <figure class="no-margin position-absolute" style="left: 60% ; top: 25%">
-                <img src="./img/arrow_down.svg" alt="arrow_down" />
+          <div class="container container-column alignItems-center">
+            <div class="composition-circle"></div>
+            <figure class="composition-rwd">
+              <img src="./img/composition_2.svg" alt="composition_2"/>
+            </figure>
+            <div class="position-relative">
+              <h3 class="fontSize-31 composition-paragraph-title border">Siarczan chondroityny <br/><span>300 mg</span>
+              </h3>
+              <figure class="position-absolute composition-vector-left no-margin">
+                <img class="composition-vector-img" src="./img/big-vector-left.svg" alt="syringe-vector-left"/>
+              </figure>
+              <figure class="position-absolute composition-vector-right no-margin small">
+                <img class="composition-vector-img" src="./img/big-vector-right.svg" alt="syringe-vector-right"/>
               </figure>
             </div>
+            <p class="fontSize-20 text-center composition-paragraph">Chondroityna, podobnie jak glukozamina, jest
+              składnikiem chrząstki. Chondroityna
+              pomaga zwalczać enzymy, które niszczą chrząstkę, a także pomaga chrząstce zatrzymać wodę, co jest ważne
+              dla jej sprężystości i absorpcji wstrząsów.
+            </p>
           </div>
-          <div id="product_list" class="container container-center"></div>
+          <div class="container container-column alignItems-center">
+            <div class="composition-circle"></div>
+            <figure class="composition-rwd">
+              <img src="./img/composition_1.svg" alt="composition_3"/>
+            </figure>
+            <h3 class="fontSize-31 composition-paragraph-title border">Kwas hialuronowy <br/><span>50 mg</span></h3>
+            <p class="fontSize-20 text-center composition-paragraph">Kwas hialuronowy jest kluczowym składnikiem płynu
+              stawowego, który działa jak smar
+              i amortyzator dla stawów. Suplementacja kwasem hialuronowym może pomóc w utrzymaniu prawidłowej
+              objętości i konsystencji płynu stawowego.
+            </p>
+          </div>
         </div>
-      </section>
-    </main>
-    <script src="js/app.js"></script>
-  </body>
+        <div class="container container-column alignItems-center bottle-order">
+          <div class="container container-column alignItems-center position-relative">
+            <picture class="no-margin">
+              <source srcset="./img/bottle_mobile.webp" media="(max-width: 992px)">
+              <source srcset="./img/bottle.webp">
+              <img class="bottle-img" src="./img/bottle.webp" alt="bottle">
+            </picture>
+            <button class="composition-button position-absolute">Kup teraz</button>
+          </div>
+        </div>
+        <div class="container container-column alignItems-center composition jc-space-between">
+          <div class="container container-column alignItems-center">
+            <div class="composition-circle"></div>
+            <figure class="composition-rwd">
+              <img src="./img/composition_4.svg" alt="composition_4"/>
+            </figure>
+            <div class="position-relative">
+              <h3 class="fontSize-31 composition-paragraph-title border">Czarci Pazur <br/><span>250 mg</span></h3>
+              <figure class="position-absolute composition-vector-left no-margin">
+                <img class="composition-vector-img" src="./img/big-vector-left.svg" alt="syringe-vector-left"/>
+              </figure>
+              <figure class="position-absolute composition-vector-right no-margin">
+                <img class="composition-vector-img" src="./img/big-vector-right.svg" alt="syringe-vector-right"/>
+              </figure>
+            </div>
+            <p class="fontSize-20 text-center composition-paragraph">Glukozamina jest naturalnym składnikiem chrząstki.
+              Dodatek glukozaminy przyczynia się do zwiększenia
+              produkcji glikozaminoglikanów (m.in. siarczanu keratanu, heparanu, kwasu hialuronowego), które pomagają w
+              odbudowie chrząstki, co jest szczególnie korzystne dla zwierząt ze zmianami zwyrodnieniowymi stawów.
+            </p>
+          </div>
+          <div class="container container-column alignItems-center">
+            <div class="composition-circle"></div>
+            <figure class="composition-rwd">
+              <img src="./img/composition_5.svg" alt="composition_5"/>
+            </figure>
+            <h3 class="fontSize-31 composition-paragraph-title border">Witamina C <br/><span>50 mg</span></h3>
+            <p class="fontSize-20 text-center composition-paragraph">Witamina C jest potężnym przeciwutleniaczem, który
+              może pomóc w ochronie stawów
+              poprzez neutralizację wolnych rodników, które mogą uszkadzać chrząstkę. Ponadto, witamina C odgrywa
+              ważną rolę w produkcji kolagenu, kluczowego składnika chrząstki.
+            </p>
+          </div>
+          <div class="container container-column alignItems-center">
+            <div class="composition-circle"></div>
+            <figure class="composition-rwd">
+              <img src="./img/composition_6.svg" alt="composition_6"/>
+            </figure>
+            <div class="position-relative">
+              <h3 class="fontSize-31 composition-paragraph-title border">MSM <br/><span>250 mg</span></h3>
+              <figure class="position-absolute composition-vector-left no-margin">
+                <img class="composition-vector-img" src="./img/big-vector-left.svg" alt="syringe-vector-left"/>
+              </figure>
+              <figure class="position-absolute composition-vector-right no-margin">
+                <img class="composition-vector-img" src="./img/big-vector-right.svg" alt="syringe-vector-right"/>
+              </figure>
+            </div>
+            <p class="fontSize-20 text-center composition-paragraph">Metylosulfonylometan, czyli MSM, to naturalny
+              związek siarki, który pomaga w
+              utrzymaniu zdrowych stawów poprzez zmniejszenie stanu zapalnego i bólu. MSM może również pomagać w
+              produkcji kolagenu, co przyczynia się do zdrowia chrząstki stawowej.
+            </p>
+          </div>
+          <div class="container container-column alignItems-center composition-rwd">
+            <div class="composition-circle"></div>
+            <figure>
+              <img src="./img/composition_7.svg" alt="composition_7"/>
+            </figure>
+            <h3 class="fontSize-31 composition-paragraph-title border">Syrop glukozowo - fruktozowy
+              <br/><span>250 mg</span></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div>
+    <div class="parallax"></div>
+  </div>
+  <section id="product">
+    <div class="container container-center container-column">
+      <div class="container container-center select-section">
+        <label class="fontSize-20 fontWeight-normal selectLabel" for="count">Liczba produktów na stronie</label>
+        <div class="select-container">
+          <select name="count" id="count" class="select fontSize-20 fontWeight-normal">
+            <option selected>10</option>
+            <option>20</option>
+            <option>30</option>
+            <option>40</option>
+            <option>50</option>
+          </select>
+          <figure class="no-margin position-absolute" style="left: 60% ; top: 25%">
+            <img src="./img/arrow_down.svg" alt="arrow_down"/>
+          </figure>
+        </div>
+      </div>
+      <div id="product_list" class="container container-center"></div>
+    </div>
+  </section>
+</main>
+<script src="js/app.js"></script>
+</body>
 </html>

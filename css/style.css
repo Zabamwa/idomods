@@ -74,23 +74,15 @@ nav {
   padding: 0;
 }
 
-.menu-tab { cursor: pointer}
-
-.menu-tab.active::after {
-  content: '';
+.menu-tab a {
+  cursor: pointer;
   display: block;
-  border-bottom: 2px solid black;
-  width: 100%;
-  animation-duration: 0.2s;
-  animation-name: border-animation;
-}
-
-@keyframes border-animation {
-  from {
-    width: 0%;
+  border-bottom: 2px solid transparent;
+  &:hover {
+    border-color: #838383;
   }
-  to {
-    width: 100%;
+  &.active {
+    border-color: #838383;
   }
 }
 
@@ -243,6 +235,15 @@ nav {
   padding-bottom: 120px;
 }
 
+.border {
+  border: 2px solid transparent;
+  border-width: 0 0 2px 0;
+  padding-bottom: 24px;
+  &:hover {
+    border-color: #838383;
+  }
+}
+
 .preparation-paragraph {
   font-size: 20px;
   font-weight: lighter;
@@ -317,6 +318,7 @@ nav {
 
 .composition {
   margin-top: 36px;
+  gap: 40px;
 }
 
 .fontSize-20 {
@@ -400,9 +402,8 @@ nav {
 #product_list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
   gap: 50px;
-  margin: 120px 130px 0 130px;
+  margin: 120px 30px;
 }
 
 .product {
@@ -466,7 +467,36 @@ nav {
   top: 85px;
 }
 
+.flower-vector-left {
+  left: -75px;
+  top: 130px;
+}
+
+.pets-vector-right {
+  right: -60px;
+  top: 120px
+}
+
+.pets-vector-left {
+  left: -65px;
+  top: 130px;
+}
+
+.syringe-vector-right {
+  right: -65px;
+  top: 115px
+}
+
+.syringe-vector-left {
+  left: -80px;
+  top: 85px;
+}
+
 .only-mobile {
+  display: none;
+}
+
+.composition-vector-img {
   display: none;
 }
 
@@ -489,6 +519,7 @@ nav {
 
   nav {
     justify-content: center;
+    padding: 0 30px;
   }
 
   .big-logo {
@@ -535,6 +566,12 @@ nav {
     align-items: center;
   }
 
+  .container-preparation-details {
+    flex-direction: column;
+    align-content: center;
+    gap: 50px;
+  }
+
   .action-preparation {
     gap: 32px;
     display: flex;
@@ -567,8 +604,8 @@ nav {
   }
 
   .product {
-    max-width: 105px;
-    height: 105px;
+    max-width: 190px;
+    height: 190px;
   }
 
   #product_list {
@@ -590,12 +627,17 @@ nav {
   }
 
   .flower-vector-right {
-    top: 250px;
+    top: 415px;
     right: -30px;
+  }
+
+  .flower-vector-left {
+    top: 415px;
   }
 
   .only-mobile {
     display: flex;
+    margin-left: 24px;
   }
 
   .flex-wrap-bottle-section {
@@ -638,18 +680,102 @@ nav {
     color: white;
     font-weight: lighter;
     text-transform: uppercase;
+    padding: 0;
   }
 
   .open-mobile-menu {
     display: flex;
   }
 
-  .parallax {
-    background-attachment: local;
-  }
-
   .selectLabel {
     text-align: center;
   }
 
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .small-vector-right {
+    display: none;
+  }
+
+  .pets-vector-right {
+    right: -60px;
+    top: 415px
+  }
+
+  .pets-vector-left {
+    left: -105px;
+    top: 415px;
+  }
+
+  .syringe-vector-right {
+    right: -65px;
+    top: 415px
+  }
+
+  .syringe-vector-left {
+    left: -120px;
+    top: 415px;
+  }
+
+  .composition-vector-img, .vector-img {
+    max-width: 80px;
+    width: 100%;
+    height: auto;
+    display: flex;
+  }
+
+  .composition-vector-right{
+    top: 20px;
+    right: -100px;
+  }
+
+  .composition-vector-right.small{
+    top: 20px;
+    right: -80px;
+  }
+
+  .composition-vector-left{
+    top: 20px;
+    left: -100px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #product_list {
+    justify-content: center;
+  }
+  .composition-vector-right.small{
+    top: 20px;
+    right: -70px;
+  }
+
+  .parallax {
+    background-image: url("../img/dog_mobile.webp");
+    background-position: center;
+    min-height: 300px;
+  }
+
+  .flower-vector-right,.pets-vector-right, .syringe-vector-right {
+    top: 300px;
+    right: -30px;
+  }
+
+  .flower-vector-left, .pets-vector-left, .syringe-vector-left {
+    top: 300px;
+    left: -30px;
+  }
+
+  .big-vector-left, .big-vector-right {
+    max-width: 80px;
+  }
+  .big-vector-left {
+    top: 100%;
+  }
+
+  .big-vector-right {
+    top: 120%;
+  }
 }
