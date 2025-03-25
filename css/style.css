@@ -413,7 +413,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
-  margin: 120px 30px;
+  margin: 120px 7%;
 }
 
 .product {
