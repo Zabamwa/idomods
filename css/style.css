@@ -502,7 +502,7 @@ nav {
   top: 85px;
 }
 
-.only-mobile {
+.only-mobile, .only-mobile-menu {
   display: none;
 }
 
@@ -537,7 +537,7 @@ nav {
   .logo-section {
     margin: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   nav {
@@ -660,6 +660,14 @@ nav {
     margin-left: 24px;
   }
 
+  .only-mobile-menu {
+    display: flex;
+    position: fixed;
+    top: 45px;
+    right: 10px;
+    z-index: 10;
+  }
+
   .flex-wrap-bottle-section {
     flex-wrap: wrap;
   }
@@ -705,6 +713,7 @@ nav {
 
   .open-mobile-menu {
     display: flex;
+    z-index: 3;
   }
 
   .selectLabel {
