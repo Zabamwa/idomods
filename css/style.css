@@ -44,6 +44,12 @@ a {
   color: inherit;
 }
 
+.text-gradient {
+  background: linear-gradient(90.01deg, #111111 -8.85%, #B1B1B1 58.84%, #696969 91.39%, #B1B1B1 116.12%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 nav {
   display: flex;
   align-items: center;
@@ -52,7 +58,7 @@ nav {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2;
 }
 
 .logo-section {
@@ -78,6 +84,7 @@ nav {
   cursor: pointer;
   display: block;
   border-bottom: 2px solid transparent;
+  transition: border-color 0.5s ease;
   &:hover {
     border-color: #838383;
   }
@@ -149,6 +156,8 @@ nav {
 
 .section-detail {
   margin-top: 160px;
+  position: relative;
+  z-index: 1;
 }
 
 .container-details {
@@ -239,6 +248,7 @@ nav {
   border: 2px solid transparent;
   border-width: 0 0 2px 0;
   padding-bottom: 24px;
+  transition: border-color 0.5s ease;
   &:hover {
     border-color: #838383;
   }
@@ -365,8 +375,8 @@ nav {
 /*PARALLAX*/
 
 .parallax {
-  background-image: url("../img/dog.webp"), url("../img/vector-dog-left.svg"), url("../img/vector-dog-right.svg");
-  min-height: 500px;
+  background-image: url("../img/dog.webp");
+  min-height: 800px;
   background-attachment: fixed;
   background-position: center,
   calc(50% - 200px) calc(50% + 100px),
@@ -429,7 +439,7 @@ nav {
   justify-content: center;
   align-items: center;
   padding: 0;
-  z-index: 1;
+  z-index: 3;
 }
 
 .open {
@@ -463,32 +473,32 @@ nav {
 
 .flower-vector-right {
   position: absolute;
-  right: -60px;
+  right: -15px;
   top: 85px;
 }
 
 .flower-vector-left {
-  left: -75px;
+  left: -15px;
   top: 130px;
 }
 
 .pets-vector-right {
-  right: -60px;
+  right: -15px;
   top: 120px
 }
 
 .pets-vector-left {
-  left: -65px;
+  left: -15px;
   top: 130px;
 }
 
 .syringe-vector-right {
-  right: -65px;
+  right: -15px;
   top: 115px
 }
 
 .syringe-vector-left {
-  left: -80px;
+  left: -15px;
   top: 85px;
 }
 
@@ -507,8 +517,21 @@ nav {
 }
 
 @media screen and (max-width: 992px) {
+  .parallax {
+    min-height: 400px;
+    background-size: contain;
+  }
+
+  .margin-section {
+    margin: 0 15px;
+  }
+
   .menu-section {
     display: none;
+  }
+
+  .fontSize-mobile {
+    font-size: 13px;
   }
 
   .logo-section {
@@ -548,10 +571,16 @@ nav {
 
   .bottle-img, .big-bottle-img {
     max-width: 290px;
+    width: 100%;
   }
 
   .promo-section-paragraph {
     width: auto;
+  }
+
+  .width100 {
+    width: 100%;
+    text-align: center;
   }
 
   .promo-section-title, .preparation-title, .preparation-subtitle, .composition-title, .composition-paragraph-title {
@@ -626,15 +655,6 @@ nav {
     font-size: 20px;
   }
 
-  .flower-vector-right {
-    top: 415px;
-    right: -30px;
-  }
-
-  .flower-vector-left {
-    top: 415px;
-  }
-
   .only-mobile {
     display: flex;
     margin-left: 24px;
@@ -700,24 +720,13 @@ nav {
     display: none;
   }
 
-  .pets-vector-right {
-    right: -60px;
-    top: 415px
+  .flower-vector-right, .pets-vector-right,  .syringe-vector-right {
+    right: -15px;
+    top: 100%
   }
 
-  .pets-vector-left {
-    left: -105px;
-    top: 415px;
-  }
-
-  .syringe-vector-right {
-    right: -65px;
-    top: 415px
-  }
-
-  .syringe-vector-left {
-    left: -120px;
-    top: 415px;
+  .flower-vector-left, .pets-vector-left, .syringe-vector-left {
+    top: 100%;
   }
 
   .composition-vector-img, .vector-img {
@@ -729,17 +738,25 @@ nav {
 
   .composition-vector-right{
     top: 20px;
-    right: -100px;
+    right: -15px;
   }
 
   .composition-vector-right.small{
     top: 20px;
-    right: -80px;
+    right: -15px;
   }
 
   .composition-vector-left{
     top: 20px;
-    left: -100px;
+    left: -15px;
+  }
+
+  .big-vector-left {
+    top: 100%;
+  }
+
+  .big-vector-right {
+    top: 120%;
   }
 }
 
@@ -749,25 +766,7 @@ nav {
   }
   .composition-vector-right.small{
     top: 20px;
-    right: -70px;
   }
-
-  .parallax {
-    background-image: url("../img/dog_mobile.webp");
-    background-position: center;
-    min-height: 300px;
-  }
-
-  .flower-vector-right,.pets-vector-right, .syringe-vector-right {
-    top: 300px;
-    right: -30px;
-  }
-
-  .flower-vector-left, .pets-vector-left, .syringe-vector-left {
-    top: 300px;
-    left: -30px;
-  }
-
   .big-vector-left, .big-vector-right {
     max-width: 80px;
   }
@@ -778,4 +777,12 @@ nav {
   .big-vector-right {
     top: 120%;
   }
+
+  .product {
+    max-width: 105px;
+    height: 105px;
+  }
+   .parallax {
+     min-height: 300px;
+   }
 }
