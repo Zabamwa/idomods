@@ -439,7 +439,7 @@ nav {
   justify-content: center;
   align-items: center;
   padding: 0;
-  z-index: 3;
+  z-index: 40;
 }
 
 .open {
@@ -473,32 +473,32 @@ nav {
 
 .flower-vector-right {
   position: absolute;
-  right: -15px;
+  right: -60px;
   top: 85px;
 }
 
 .flower-vector-left {
-  left: -15px;
+  left: -75px;
   top: 130px;
 }
 
 .pets-vector-right {
-  right: -15px;
+  right: -20px;
   top: 120px
 }
 
 .pets-vector-left {
-  left: -15px;
+  left: -65px;
   top: 130px;
 }
 
 .syringe-vector-right {
-  right: -15px;
+  right: -20px;
   top: 115px
 }
 
 .syringe-vector-left {
-  left: -15px;
+  left: -75px;
   top: 85px;
 }
 
@@ -581,6 +581,15 @@ nav {
   .width100 {
     width: 100%;
     text-align: center;
+  }
+
+  .width-420 {
+    width: 100%;
+  }
+
+  .mobile-center {
+    display: flex;
+    justify-content: center;
   }
 
   .promo-section-title, .preparation-title, .preparation-subtitle, .composition-title, .composition-paragraph-title {

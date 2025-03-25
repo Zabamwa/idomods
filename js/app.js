@@ -106,9 +106,9 @@ closeModal.addEventListener('click', () => {
 document.addEventListener('scroll', async () => {
   const scrollHeight = window.innerHeight;
   const pageY = window.scrollY
-  const bodyOffsetHeight = document.body.offsetHeight;
+  const bodyScrollHeight = document.documentElement.scrollHeight;
 
-  if(scrollHeight + pageY >= bodyOffsetHeight){
+  if(scrollHeight + pageY >= bodyScrollHeight && !dataIsLoading){
     apiUrl = `https://brandstestowy.smallhost.pl/api/random?pageNumber=${pageNumber}&pageSize=${displayCount}`;
    await fetchData(apiUrl);
   }
