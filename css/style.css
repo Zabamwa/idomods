@@ -116,8 +116,8 @@ nav {
 }
 
 .big-logo {
-  width: 730px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 730px;
   height: auto;
 }
 
@@ -155,7 +155,7 @@ nav {
 }
 
 .section-detail {
-  margin-top: 160px;
+  margin-top: 7%;
   position: relative;
   z-index: 1;
 }
@@ -222,6 +222,7 @@ nav {
   font-weight: normal;
   margin: 0;
   margin-top: 180px;
+  position: relative;
 }
 
 .preparation-subtitle {
@@ -237,6 +238,14 @@ nav {
   margin-top: 10px;
 }
 
+.border-line-composition-subtitle {
+  display: none;
+  width: 126px;
+  height: 2px;
+  background: #838383;
+  margin-top: 10px;
+}
+
 .container-preparation-details {
   display: flex;
   gap: 130px;
@@ -244,7 +253,7 @@ nav {
   padding-bottom: 120px;
 }
 
-.border {
+.border img {
   border: 2px solid transparent;
   border-width: 0 0 2px 0;
   padding-bottom: 24px;
@@ -478,7 +487,7 @@ nav {
 }
 
 .flower-vector-left {
-  left: -75px;
+  left: -15px;
   top: 130px;
 }
 
@@ -488,7 +497,7 @@ nav {
 }
 
 .pets-vector-left {
-  left: -65px;
+  left: -15px;
   top: 130px;
 }
 
@@ -498,7 +507,7 @@ nav {
 }
 
 .syringe-vector-left {
-  left: -75px;
+  left: -15px;
   top: 85px;
 }
 
@@ -508,6 +517,12 @@ nav {
 
 .composition-vector-img {
   display: none;
+}
+
+.big-bottle-img {
+  max-width: 700px;
+  width: 100%;
+  height: auto;
 }
 
 @media screen and (max-width: 1280px) {
@@ -534,6 +549,10 @@ nav {
     font-size: 13px;
   }
 
+  .margin-composition {
+    margin-top: 35px;
+  }
+
   .logo-section {
     margin: 0;
     display: flex;
@@ -558,7 +577,8 @@ nav {
   }
 
   .container-details {
-    margin: 0
+    margin: 0;
+    text-align: center;
   }
 
   .buy-btn {
@@ -598,6 +618,12 @@ nav {
 
   .promo-section-paragraph, .preparation-paragraph, .composition-subtitle, .composition-paragraph {
     font-size: 13px;
+  }
+
+  .preparation-paragraph-mobile {
+    font-size: 13px;
+    text-align: left;
+    font-weight: lighter;
   }
 
   .container-details {
@@ -755,17 +781,27 @@ nav {
   }
 
   .composition-vector-right{
+    top: -80px;
+    right: -15px;
+  }
+
+  .composition-vector-right-title {
     top: 20px;
     right: -15px;
   }
 
-  .composition-vector-right.small{
+  .composition-vector-left-title {
     top: 20px;
+    left: -15px;
+  }
+
+  .composition-vector-right.small{
+    top: -80px;
     right: -15px;
   }
 
   .composition-vector-left{
-    top: 20px;
+    top: -80px;
     left: -15px;
   }
 
@@ -794,6 +830,10 @@ nav {
 
   .big-vector-right {
     top: 120%;
+  }
+
+  .border-line-composition-subtitle {
+    display: block;
   }
 
   .product {

@@ -1,154 +1,155 @@
-const menuTabs = document.querySelectorAll('.menu-tab');
-const mobileMenuTabs = document.querySelectorAll('.mobile-menu-tab');
-const modal = document.querySelector('#modal');
-//MODAL DATA
-const productId = document.querySelector('#product_id');
-const productName = document.querySelector('#product_name');
-const productValue = document.querySelector('#product_value');
-const closeModal = document.querySelector('#close_modal');
-//////////////
-const body = document.querySelector('body');
-const productList = document.getElementById('product_list');
-const productsCount = document.getElementById('count');
-const hamburger = document.querySelector('.mobile-menu')
-const mobileMenu = document.querySelector('#menu')
+const elements = {
+  menuTabs: document.querySelectorAll('.menu-tab a'),
+  mobileMenuTabs: document.querySelectorAll('.mobile-menu-tab'),
+  modal: document.querySelector('#modal'),
+  productId: document.querySelector('#product_id'),
+  productName: document.querySelector('#product_name'),
+  productValue: document.querySelector('#product_value'),
+  closeModal: document.querySelector('#close_modal'),
+  body: document.querySelector('body'),
+  productList: document.getElementById('product_list'),
+  productsCount: document.getElementById('count'),
+  hamburger: document.querySelector('.mobile-menu'),
+  mobileMenu: document.querySelector('#menu')
+};
 
 let dataIsLoading = false;
 let canFetchMore = true;
-let displayCount = productsCount.value;
 let pageNumber = 1;
-let apiUrl = `https://brandstestowy.smallhost.pl/api/random?pageNumber=${pageNumber}&pageSize=${displayCount}`
+let apiUrl = `https://brandstestowy.smallhost.pl/api/random?pageNumber=${pageNumber}&pageSize=${elements.productsCount.value}`
 
-// SET ACTIVE TABS IN MENU
-menuTabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    menuTabs.forEach(item => item.classList.remove('active'))
-    tab.classList.add('active')
-  })
-});
 
-// INSERT PRODUCT TO PRODUCT LIST
-const insertData = (productData) => {
-  productData.forEach(data => {
-    const product = document.createElement('div');
-    product.textContent = `ID: ${data.id}`;
-    product.classList.add('product')
-    product.setAttribute('data-name', data.id);
-    product.setAttribute('data-value', data.text);
-    product.setAttribute('data-id', data.id);
-
-    productList.appendChild(product)
-  })
+//SET ACTIVE TAB
+const setActiveTab = (tabs) => {
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(item => item.classList.remove('active'));
+      tab.classList.add('active');
+    });
+  });
 };
 
-// ASSIGN DATA TO MODAL
-const assignDataToModal = () => {
-  const products = document.querySelectorAll('.product');
-  products.forEach(product => {
-    product.addEventListener('click', () => {
-      modal.classList.add('open')
-      body.style.overflow = 'hidden'
-      productId.innerHTML = `ID ${product.dataset.id}`;
-      productName.innerHTML = `Nazwa: ${product.dataset.name}`;
-      productValue.innerHTML = `Wartość: ${product.dataset.value}`;
-    })
-  })
-}
+setActiveTab(elements.menuTabs);
+setActiveTab(elements.mobileMenuTabs);
 
 // FETCH DATA
 const fetchData = async (url) => {
+  if (dataIsLoading || !canFetchMore) return;
   try {
-    if (!dataIsLoading && canFetchMore) {
-      dataIsLoading = true;
-      const response = await fetch(url);
-
-      const data = await response.json();
-      if (data.currentPage === data.totalPages) {
-        canFetchMore = false;
-      }
-      insertData(data.data);
-      assignDataToModal();
+    dataIsLoading = true;
+    const response = await fetch(url);
+    if (!response.ok) {
+      console.error("Błąd pobierania danych", response.status);
+      return;
     }
-  }
-  catch (error) {
-    throw new Error(error);
-  }
-  finally {
+    const data = await response.json();
+    if (data.currentPage === data.totalPages) {
+      canFetchMore = false;
+    }
+    renderProducts(data.data);
+  } catch (error) {
+    console.error("Wystąpił błąd:", error);
+  } finally {
     dataIsLoading = false;
     pageNumber++;
   }
 };
 
-// CHANGE ELEMENTS PER PAGE
-async function changeDisplayCount() {
-  displayCount = productsCount.value;
-  pageNumber = 1;
-  apiUrl = `https://brandstestowy.smallhost.pl/api/random?pageNumber=${pageNumber}&pageSize=${displayCount}`;
-  productList.innerHTML = ''
-  await fetchData(apiUrl)
-}
+//OPEN MODAL
+elements.productList.addEventListener('click', (e) => {
+  const product = e.target.closest('.product');
+  if (!product) return;
 
-// CLOSE MODAL AND CHANGE OVERFLOW TO AUTO - CLOSE AFTER CLICK ON THE OUTSIDE MODAL
-modal.addEventListener('click', (e) => {
-  if (e.target.id === 'modal') {
-        modal.classList.remove('open')
-        body.style.overflow = 'auto'
+  elements.modal.classList.add('open');
+  elements.body.style.overflow = 'hidden';
+  elements.productId.innerHTML = `ID ${product.dataset.id}`;
+  elements.productName.innerHTML = `Nazwa: ${product.dataset.name}`;
+  elements.productValue.innerHTML = `Wartość: ${product.dataset.value}`;
+});
+
+//CLOSE MODAL
+const closeModalHandler = (e) => {
+  if (e.target.id === 'modal' || e.target.id === 'close_modal') {
+    elements.modal.classList.remove('open');
+    elements.body.style.overflow = 'auto';
+  }
+};
+
+elements.modal.addEventListener('click', closeModalHandler);
+elements.closeModal.addEventListener('click', closeModalHandler);
+
+//OPEN MOBILE MENU
+elements.hamburger.addEventListener('click', () => {
+  elements.mobileMenu.classList.toggle('open-mobile-menu');
+  elements.body.style.overflow = elements.mobileMenu.classList.contains('open-mobile-menu') ? 'hidden' : 'auto';
+});
+
+//CLOSE MOBILE MENU
+elements.mobileMenu.addEventListener('click', (e) => {
+  const clickedTab = e.target.closest('.mobile-menu-tab a');
+
+  if (e.target.id === 'menu') {
+    elements.mobileMenu.classList.remove('open-mobile-menu');
+    elements.body.style.overflow = 'auto';
+    return;
+  }
+
+  if (clickedTab) {
+    elements.mobileMenu.classList.remove('open-mobile-menu');
+    elements.body.style.overflow = 'auto';
+
+    const targetTab = document.querySelector(`.menu-tab a[href="${clickedTab.getAttribute('href')}"]`);
+    if (targetTab) {
+      elements.menuTabs.forEach(tab => tab.classList.remove('active'));
+      targetTab.classList.add('active');
     }
-},)
+  }
+});
 
-// CLOSE MODAL AND CHANGE OVERFLOW TO AUTO - CLOSE AFTER CLICK ON THE CROSS
-closeModal.addEventListener('click', () => {
-  modal.classList.remove('open');
-  body.style.overflow = 'auto'
-})
+// INSERT DATA
+const renderProducts = (products) => {
+  const fragment = document.createDocumentFragment();
+  products.forEach(({ id, text }) => {
+    const product = document.createElement('div');
+    product.textContent = `ID: ${id}`;
+    product.classList.add('product');
+    product.dataset.name = id;
+    product.dataset.value = text;
+    product.dataset.id = id;
+
+    fragment.appendChild(product);
+  });
+  elements.productList.appendChild(fragment);
+};
 
 // LOAD MORE
 document.addEventListener('scroll', async () => {
   const scrollHeight = window.innerHeight;
   const pageY = window.scrollY
-  const bodyScrollHeight = document.documentElement.scrollHeight;
+  const bodyOffsetHeight = document.body.offsetHeight;
 
-  if(scrollHeight + pageY >= bodyScrollHeight && !dataIsLoading){
-    apiUrl = `https://brandstestowy.smallhost.pl/api/random?pageNumber=${pageNumber}&pageSize=${displayCount}`;
+  if(scrollHeight + pageY >= bodyOffsetHeight - 10 && !dataIsLoading){
+    apiUrl = `https://brandstestowy.smallhost.pl/api/random?pageNumber=${pageNumber}&pageSize=${elements.productsCount.value}`;
    await fetchData(apiUrl);
   }
 });
 
+// CHANGE ELEMENTS PER PAGE
+async function changeDisplayCount() {
+  const displayCount = elements.productsCount.value;
+  pageNumber = 1;
+  apiUrl = `https://brandstestowy.smallhost.pl/api/random?pageNumber=${pageNumber}&pageSize=${Number(displayCount)}`;
+  elements.productList.innerHTML = ''
+  await fetchData(apiUrl)
+}
+
 // EVENT FOR CHANGE ELEMENTS PER PAGE
-productsCount.addEventListener('change', changeDisplayCount);
+elements.productsCount.addEventListener('change', changeDisplayCount);
 
 // LOAD DATA
 document.addEventListener('DOMContentLoaded', async () => {
  await fetchData(apiUrl);
 })
-
-// MOBILE MENU
-
-hamburger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open-mobile-menu')
-  if (mobileMenu.classList.contains('open-mobile-menu')) {
-    body.style.overflow = 'hidden'
-  } else {
-    body.style.overflow = 'auto'
-  }
-});
-
-// CLOSE MENU AND CHANGE OVERFLOW TO AUTO - CLOSE AFTER CLICK ON THE OUTSIDE MODAL
-mobileMenu.addEventListener('click', (e) => {
-  if (e.target.id === 'menu') {
-    mobileMenu.classList.remove('open-mobile-menu')
-    body.style.overflow = 'auto'
-  }
-},)
-
-//SELECT MOBILE MENU OPTIONS
-
-mobileMenuTabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    mobileMenu.classList.remove('open-mobile-menu')
-    body.style.overflow = 'auto'
-  })
-});
 
 // SET ACTIVE TAB DURING SCROLLING
 const updateActiveTab = () => {
@@ -173,5 +174,3 @@ const updateActiveTab = () => {
 }
 
 window.addEventListener("scroll", updateActiveTab);
-
-
